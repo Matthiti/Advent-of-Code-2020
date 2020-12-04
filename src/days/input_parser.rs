@@ -4,6 +4,7 @@ use std::fs::File;
 use std::io::BufRead;
 use std::error::Error;
 use std::str::FromStr;
+use std::fs;
 use core::fmt;
 
 #[derive(Debug)]
@@ -41,6 +42,10 @@ pub fn parse_file<T: FromStr>(file: &str) -> Result<Vec<T>, Box<dyn Error>>  {
         }
     }
     Ok(result)
+}
+
+pub fn parse_file_raw(file: &str) -> std::io::Result<String> {
+    fs::read_to_string(file)
 }
 
 // Source: https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html

@@ -1,5 +1,5 @@
 mod days;
 
 fn main() {
-    println!("{}", days::day03::part2::start());
+    println!("{}", days::day04::part2::start());
 }
